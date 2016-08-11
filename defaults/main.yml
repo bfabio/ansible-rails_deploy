@@ -41,7 +41,9 @@ rails_deploy_hosts_master: '{{ groups[rails_deploy_hosts_group][0] }}'
 rails_deploy_git_location: ''
 
 # Which branch or tag should be used?
-rails_deploy_git_version: 'master'
+# Versions newer than 4-2-stable aren't supported yet, because Debian stable
+# (jessie) lacks the required ruby 2.2 packages.
+rails_deploy_git_version: '4-2-stable'
 
 # Which remote should be used?
 rails_deploy_git_remote: 'origin'
